@@ -1,8 +1,8 @@
 # thunderBlog
 ## 摘要
 这是一个学习的产物，我想着既然已经写出来了不如部署出来方便以后写点东西，于是这个项目诞生了。
-本博客使用springboot3+vue前后端分离架构构建。
-
+本博客使用springboot3+vue前后端分离架构构建。借鉴了Naccl大佬的前端设计
+这里是他的博客地址[Naccl](https://naccl.top/)
 ## 技术栈
 * 核心框架：spring
 * orm框架：mybatis
