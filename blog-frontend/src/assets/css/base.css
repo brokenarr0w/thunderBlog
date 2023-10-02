@@ -1,0 +1,113 @@
+html,
+body,
+#app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.transparent{
+    background:transparent !important;
+}
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px #48dbfb;
+    box-shadow: inset 0 0 6px #48dbfb;
+    background-color: #48dbfb;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px transparent;
+    box-shadow: inset 0 0 6px transparent;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+#app ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.copy-to-clipboard-button {
+    background: inherit !important;
+    box-shadow: none !important;
+}
+.m-mobile-show {
+    display: none !important;
+}
+@media screen and (max-width: 767px) {
+    .m-mobile-hide {
+        display: none !important;
+    }
+
+    .m-mobile-show {
+        display: block !important;
+    }
+}
+.m-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.color-btn{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    align-items: center;
+    background: linear-gradient(
+            90deg,#03a9f4, #f441a5, #ffeb3b,
+            #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    border-radius: 60px; /*边框圆角*/
+    background-size: 400%;
+    text-align: center;
+    width: 95px;
+    height: 35px;
+
+}
+.color-btn:hover{
+    animation: animate 8s linear infinite alternate; /*动画: 名称 时间 线性 循环 播放完回退播放*/
+    color: #4183c4;
+}
+@keyframes animate{
+    0%{
+        background-position: 0%; /*修改背景定位，实现渐变色炫光*/
+    }
+    50%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+.color-btn::before{ /*之前添加*/
+    content: '阅读本文'; /*内容*/
+    position: absolute; /*绝对定位*/
+    top:-5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+    left: -5px;
+    right: -5px;
+    bottom: -5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+    z-index: -1;
+    background: linear-gradient(
+            90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4,
+            #f441a5, #ffeb3b, #03a9f4);
+    border-radius: 40px;
+    background-size: 400%;
+    filter: blur(20px); /*过渡：模糊*/
+    opacity: 0; /*透明度*/
+    transition: 1s; /*过渡时间*/
+}
+.color-btn:hover::before{
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite; /*注意动画名称统一*/
+}
